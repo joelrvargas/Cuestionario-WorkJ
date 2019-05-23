@@ -22,6 +22,7 @@ import javax.swing.JTextPane;
 import javax.swing.border.LineBorder;
 import javax.swing.text.StyledEditorKit;
 
+
 import Render.RenderJComboBox;
 
 public class EvaluacionesGUI extends JInternalFrame implements ActionListener {
@@ -152,6 +153,7 @@ public class EvaluacionesGUI extends JInternalFrame implements ActionListener {
 		BarMenuOpciones.add(btnFormatoDerecha);
 
 		button_6 = new JButton("");
+		button_6.addActionListener(this);
 		button_6.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		button_6.setIcon(new ImageIcon(EvaluacionesGUI.class.getResource("/Multimedia/format-size.png")));
 		button_6.setBackground(Color.WHITE);
@@ -219,6 +221,7 @@ public class EvaluacionesGUI extends JInternalFrame implements ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent arg0) {
+		
 		if (arg0.getSource() == cboTamano) {
 			actionPerformedCboTamano(arg0);
 		}
@@ -319,5 +322,6 @@ public class EvaluacionesGUI extends JInternalFrame implements ActionListener {
 			cboTamano.addItem(number[i]);
 		}
 	}
-
+	
+	
 }
