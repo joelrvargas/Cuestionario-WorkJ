@@ -53,18 +53,19 @@ public class RendoUnred extends JFrame {
 		getContentPane().add(buttonPanel, BorderLayout.NORTH);
 		getContentPane().add(scroller, BorderLayout.CENTER);
 
-		textArea.getDocument().addUndoableEditListener(
+		/*textArea.getDocument().addUndoableEditListener(
 				new UndoableEditListener() {
 					public void undoableEditHappened(UndoableEditEvent e) {
 						undoManager.addEdit(e.getEdit());
 						updateButtons();
 					}
-				});
+				});*/
 
 		Document document = textArea.getDocument();
 		document.addUndoableEditListener(new UndoableEditListener() {
 			public void undoableEditHappened(UndoableEditEvent e) {
 				undoManager.addEdit(e.getEdit());
+				updateButtons();
 
 			}
 		});
